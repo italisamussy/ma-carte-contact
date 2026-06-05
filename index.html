@@ -13,17 +13,16 @@
 --texte-secondaire: #a0a0a0;
 --bordures: #262626;
 
-/* COULEURS NETTES ET DIRECTES (SANS FILTRE LOGICIEL) /
---vert-net: #00e65b; / Un vert franc qui ressort bien /
---blanc-net: #ffffff; / Blanc pur /
---rouge-alerte: #ff1a1a; / LE ROUGE EXACT DU POINT D'EXCLAMATION /
---bleu-net: #1a75ff; / Un vrai bleu roi soutenu */
+/* COULEURS NETTES ET DIRECTES */
+--vert-net: #00e65b;
+--blanc-net: #ffffff;
+--rouge-alerte: #ff1a1a;
+--bleu-net: #1a75ff;
 }
 
-• { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-/* RETOUR A LA POLICE GEOMETRIQUE ET PROFESSIONNELLE */
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 background-color: var(--fond-ecran);
 color: var(--texte-principal);
@@ -46,21 +45,21 @@ padding: 35px 20px;
 text-align: center;
 }
 
-/* ZONE REFAITE POUR UN ALIGNEMENT ET PROPORTIONS PARFAITES SUR SMARTPHONE /
+/* TAILLE DES LOGOS FORCEE ET CORRIGEE POUR SMARTPHONE */
 .partner-logos {
 display: flex;
 justify-content: center;
 align-items: center;
-gap: 30px; / Espace équilibré entre les deux logos */
-height: 75px;
+gap: 30px;
+height: 60px;
 margin-bottom: 15px;
 }
 
 .partner-logos img {
-max-width: 42%; /* Évite que les logos ne se touchent ou dépassent /
-max-height: 100%; / S'adapte à la hauteur maximale sans déformer */
+display: block;
 width: auto;
-height: auto;
+height: 55px; /* Hauteur fixe parfaite pour les deux logos */
+max-width: 45%;
 object-fit: contain;
 }
 
@@ -108,7 +107,7 @@ display: flex;
 gap: 3.5px;
 }
 
-/* RONDS TRÈS FINS (5PX) ET SANS EFFETS PARASITES */
+/* RONDS TRÈS FINS (5PX) */
 .rond {
 width: 5px;
 height: 5px;
@@ -181,7 +180,6 @@ justify-content: center;
 
 <div class="card-container">
 
-<!-- LIENS IMAGES MIS A JOUR EN LIENS EN DIRECT RAW GITHUB -->
 <div class="partner-logos">
 <img src="https://raw.githubusercontent.com/italisamussy/ma-carte-contact/main/logo.png" alt="Quattro Portoni">
 <img src="https://raw.githubusercontent.com/italisamussy/ma-carte-contact/main/bufalitaly-tondo-sito.png" alt="Bufalitaly">
@@ -253,5 +251,4 @@ justify-content: center;
 
 </body>
 </html>
-
 
