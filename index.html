@@ -1,470 +1,257 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Isabelle MUSSY - Agent Commercial</title>
-
 <style>
-
 :root {
-
 --fond-ecran: #0a0a0a;
-
- --fond-carte: #141414;
-
- --encadres-noirs: #000000;
-
- --texte-principal: #ffffff;
-
+--fond-carte: #141414;
+--encadres-noirs: #000000;
+--texte-principal: #ffffff;
 --texte-secondaire: #a0a0a0;
-
 --bordures: #262626;
 
-
 /* COULEURS NETTES ET DIRECTES (SANS FILTRE LOGICIEL) /
-
 --vert-net: #00e65b; / Un vert franc qui ressort bien /
-
 --blanc-net: #ffffff; / Blanc pur /
-
 --rouge-alerte: #ff1a1a; / LE ROUGE EXACT DU POINT D'EXCLAMATION /
-
 --bleu-net: #1a75ff; / Un vrai bleu roi soutenu */
-
 }
 
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
+• { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-
 /* RETOUR A LA POLICE GEOMETRIQUE ET PROFESSIONNELLE */
-
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
 background-color: var(--fond-ecran);
-
 color: var(--texte-principal);
-
 display: flex;
-
 justify-content: center;
-
 align-items: center;
-
 min-height: 100vh;
-
 padding: 15px;
-
 -webkit-font-smoothing: antialiased;
-
 }
-
 
 .card-container {
-
 background: var(--fond-carte);
-
 width: 100%;
-
 max-width: 380px;
-
 border-radius: 20px;
-
 box-shadow: 0 15px 50px rgba(0, 0, 0, 0.9);
-
 border: 1px solid var(--bordures);
-
 padding: 35px 20px;
-
 text-align: center;
-
 }
 
-
+/* ZONE REFAITE POUR UN ALIGNEMENT ET PROPORTIONS PARFAITES SUR SMARTPHONE /
 .partner-logos {
-
 display: flex;
-
 justify-content: center;
-
 align-items: center;
-
-gap: 25px;
-
-height: 65px;
-
+gap: 30px; / Espace équilibré entre les deux logos */
+height: 75px;
 margin-bottom: 15px;
-
 }
-
 
 .partner-logos img {
-
-max-width: 40%;
-
-height: 65px;
-
+max-width: 42%; /* Évite que les logos ne se touchent ou dépassent /
+max-height: 100%; / S'adapte à la hauteur maximale sans déformer */
+width: auto;
+height: auto;
 object-fit: contain;
-
 }
-
 
 .divider {
-
 height: 1px;
-
 background: linear-gradient(to right, transparent, var(--bordures), transparent);
-
 margin: 20px 0;
-
 }
-
 
 h1 {
-
 font-size: 25px;
-
 font-weight: 600;
-
 letter-spacing: -0.3px;
-
 margin-bottom: 5px;
-
 }
-
 
 .title {
-
 font-size: 12px;
-
 text-transform: uppercase;
-
 letter-spacing: 2px;
-
 color: var(--texte-secondaire);
-
 font-weight: 500;
-
 margin-bottom: 8px;
-
 }
-
 
 .tagline {
-
 font-size: 14px;
-
 color: #e0e0e0;
-
 font-weight: 400;
-
 margin-bottom: 25px;
-
 }
-
 
 /* GUIRLANDE TRAVERSANTE BIEN REPARTIE */
-
 .algorithmic-guirlande {
-
 display: flex;
-
 justify-content: space-between;
-
 align-items: center;
-
 width: 100%;
-
 margin-bottom: 35px;
-
 padding: 0 10px;
-
 }
-
 
 .drapeau-triplet {
-
 display: flex;
-
 gap: 3.5px;
-
 }
-
 
 /* RONDS TRÈS FINS (5PX) ET SANS EFFETS PARASITES */
-
 .rond {
-
 width: 5px;
-
- height: 5px;
-
+height: 5px;
 border-radius: 50%;
-
 display: inline-block;
-
 }
-
 
 .v-it { background-color: var(--vert-net); }
-
 .blnc { background-color: var(--blanc-net); }
-
 .r-fr-it { background-color: var(--rouge-alerte); }
-
 .b-fr { background-color: var(--bleu-net); }
 
-
 .action-buttons {
-
 display: flex;
-
 flex-direction: column;
-
 gap: 14px;
-
 margin-bottom: 25px;
-
 }
-
 
 .info-box {
-
 display: flex;
-
 align-items: center;
-
 justify-content: center;
-
 background-color: var(--encadres-noirs);
-
 border-radius: 12px;
-
 padding: 15px;
-
 border: 1px solid var(--bordures);
-
 color: var(--texte-principal);
-
 text-decoration: none;
-
 font-size: 15px;
-
 font-weight: 400;
-
 transition: all 0.2s;
-
 }
-
 
 .info-box:hover {
-
 border-color: #444444;
-
 }
-
 
 .info-box span {
-
 margin-left: 10px;
-
 }
-
 
 .qrcode-section {
-
 background-color: var(--encadres-noirs);
-
 padding: 18px;
-
 border-radius: 14px;
-
 border: 1px solid var(--bordures);
-
 }
-
 
 .qrcode-section p {
-
 font-size: 12px;
-
 color: var(--texte-secondaire);
-
 margin-bottom: 12px;
-
 }
-
 
 .qr-placeholder {
-
 width: 130px;
-
 height: 130px;
-
 margin: 0 auto;
-
 background-color: #1a1a1a;
-
 border: 1px solid var(--bordures);
-
 border-radius: 8px;
-
 display: flex;
-
 align-items: center;
-
 justify-content: center;
-
 }
-
 </style>
-
 </head>
-
 <body>
-
 
 <div class="card-container">
 
-
+<!-- LIENS IMAGES MIS A JOUR EN LIENS EN DIRECT RAW GITHUB -->
 <div class="partner-logos">
-
-<img src="logo.png" alt="Quattro Portoni">
-
-<img src="bufalitaly-tondo-sito.png" alt="Bufalitaly">
-
+<img src="https://raw.githubusercontent.com/italisamussy/ma-carte-contact/main/logo.png" alt="Quattro Portoni">
+<img src="https://raw.githubusercontent.com/italisamussy/ma-carte-contact/main/bufalitaly-tondo-sito.png" alt="Bufalitaly">
 </div>
-
 
 <div class="divider"></div>
 
-
 <h1>Isabelle MUSSY</h1>
-
 <div class="title">Agent Commercial</div>
-
 <div class="tagline">Import de fromages italiens d'exception</div>
 
-
 <!-- Guirlande fine et traversante de 7 triplets -->
-
 <div class="algorithmic-guirlande">
-
 <div class="drapeau-triplet">
-
 <span class="rond v-it"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 <div class="drapeau-triplet">
-
 <span class="rond b-fr"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 <div class="drapeau-triplet">
-
 <span class="rond v-it"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 <div class="drapeau-triplet">
-
 <span class="rond b-fr"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 <div class="drapeau-triplet">
-
 <span class="rond v-it"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 <div class="drapeau-triplet">
-
 <span class="rond b-fr"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 <div class="drapeau-triplet">
-
 <span class="rond v-it"></span>
-
 <span class="rond blnc"></span>
-
 <span class="rond r-fr-it"></span>
-
 </div>
-
 </div>
-
 
 <div class="action-buttons">
-
 <a href="tel:+33628941135" class="info-box">
-
 📞 <span>06 28 94 11 35</span>
-
 </a>
-
 
 <a href="mailto:italisa.mussy@gmail.com" class="info-box">
-
 ✉️ <span>italisa.mussy@gmail.com</span>
-
 </a>
-
 </div>
-
 
 <div class="qrcode-section">
-
 <p>Flashez pour enregistrer ma fiche contact :</p>
-
 <div class="qr-placeholder">
-
 <span style="font-size: 11px; color: var(--texte-secondaire);">[ Intégrer QR Code vCard ]</span>
-
+</div>
 </div>
 
 </div>
-
-
-</div>
-
 
 </body>
-
 </html>
+
+
