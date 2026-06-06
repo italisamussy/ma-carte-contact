@@ -6,9 +6,9 @@
     <title>Isabelle MUSSY - Carte Contact</title>
     
     <script>
-        // Si le QR code essaie d'ouvrir une page de redirection ou un sous-domaine bizarre,
-        // on force instantanément l'affichage du vrai mini-site propre.
-        if (window.location.search.includes("qr") || window.location.hostname.includes("qrcode-monkey")) {
+        // Si le scan provient de l'ancienne configuration de redirection,
+        // le code force immédiatement l'affichage de votre vraie carte Vercel.
+        if (window.location.search.includes("qr") || document.referrer.includes("qr") || window.location.href.includes("monkey")) {
             window.location.href = "https://ma-carte-contact.vercel.app/";
         }
     </script>
