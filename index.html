@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isabelle MUSSY - Carte Contact</title>
+    
+    <script>
+        // Si le QR code essaie d'ouvrir une page de redirection ou un sous-domaine bizarre,
+        // on force instantanément l'affichage du vrai mini-site propre.
+        if (window.location.search.includes("qr") || window.location.hostname.includes("qrcode-monkey")) {
+            window.location.href = "https://ma-carte-contact.vercel.app/";
+        }
+    </script>
+
     <style>
         /* --- FOND NOIR --- */
         body {
@@ -186,16 +195,16 @@
             <div class="dot dot-r"></div>
         </div>
 
-        <a href="tel:+33663766048" class="action-link">
-            📞 06 63 76 60 48
+        <a href="tel:+33628941135" class="action-link">
+            📞 06 28 94 11 35
         </a>
 
-        <a href="mailto:isamussy@gmail.com" class="action-link">
-            ✉️ isamussy@gmail.com
+        <a href="mailto:italisa.mussy@gmail.com" class="action-link">
+            ✉️ italisa.mussy@gmail.com
         </a>
 
         <div class="qr-container">
-            <img src="qr-code-mini-site.png" alt="QR Code">
+            <img src="qr-code-mini-site.png" alt="QR Code Bufalitaly">
         </div>
 
         <button class="btn-submit" onclick="telechargerVCard()">
@@ -211,8 +220,8 @@
                 "FN:Isabelle MUSSY\n" +
                 "ORG:Bufalitaly / Quattro Portoni\n" +
                 "TITLE:Agent commercial - Import de fromages italiens d'exception\n" +
-                "TEL;TYPE=CELL,VOICE:+33663766048\n" +
-                "EMAIL;TYPE=PREF,INTERNET:isamussy@gmail.com\n" +
+                "TEL;TYPE=CELL,VOICE:+33628941135\n" +
+                "EMAIL;TYPE=PREF,INTERNET:italisa.mussy@gmail.com\n" +
                 "URL:https://ma-carte-contact.vercel.app/\n" +
                 "END:VCARD";
 
