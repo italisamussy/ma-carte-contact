@@ -5,90 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bufalitaly - Contact</title>
     <style>
+        /* --- 1. FOND NOIR PREMIUM --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f4f4f7;
-            color: #333;
+            background-color: #0b0b0c; 
+            color: #ffffff; 
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
         }
-        .card {
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+        /* --- 2. GUIRLANDE UNIQUEMENT VERT / BLANC / ROUGE --- */
+        .guirlande {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 400px;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle, rgba(0, 146, 70, 0.4) 1.5px, transparent 1.5px),  /* Vert */
+                radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px),/* Blanc */
+                radial-gradient(circle, rgba(206, 43, 55, 0.4) 1.5px, transparent 1.5px); /* Rouge */
+            background-size: 40px 40px, 60px 60px, 50px 50px;
+            background-position: 0 0, 20px 20px, 10px 30px;
+            opacity: 0.25;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* --- BOÎTE DE LA CARTE --- */
+        .card {
+            background: #16161a; 
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 380px;
             padding: 30px;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
+        
+        /* --- 3. ALIGNEMENT DES DEUX LOGOS --- */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
         .logo-container img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
         }
+
         h1 {
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: 700;
             margin: 10px 0 5px 0;
-            color: #111;
+            letter-spacing: -0.5px;
         }
+
         p {
-            font-size: 16px;
-            color: #666;
+            font-size: 15px;
+            color: #8e8e93;
             margin: 0 0 25px 0;
         }
+
+        /* --- BLOC BLANC DU QR CODE (Indispensable pour le scan) --- */
         .qr-container {
-            background-color: #fafafa;
-            border: 1px dashed #e1e1e6;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 25px;
+            background-color: #ffffff; 
+            border-radius: 18px;
+            padding: 15px;
+            margin-bottom: 30px;
             display: inline-block;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
+
         .qr-container img {
-            width: 200px;
-            height: 200px;
+            width: 190px;
+            height: 190px;
             display: block;
             margin: 0 auto;
         }
+
+        /* --- BOUTON D'ENREGISTREMENT --- */
         .btn {
             display: block;
-            background-color: #000000;
-            color: #ffffff;
+            background-color: #ffffff; 
+            color: #000000;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 14px;
             font-weight: 600;
             font-size: 16px;
-            transition: background-color 0.2s ease;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
-        .btn:hover {
-            background-color: #222222;
+
+        .btn:active {
+            background-color: #e5e5ea;
         }
     </style>
 </head>
 <body>
 
+    <div class="guirlande"></div>
+
     <div class="card">
         <div class="logo-container">
-            <img src="bufalitaly-tondo-sito.png" alt="Logo Bufalitaly">
+            <img src="bufalitaly-tondo-sito.png" alt="Logo Rond">
+            <img src="logo.png" alt="Logo Signature">
         </div>
 
         <h1>Bufalitaly</h1>
         <p>Scannez ou enregistrez ma carte contact</p>
 
         <div class="qr-container">
-            <img src="qr-code-mini-site.png" alt="QR Code Bufalitaly">
+            <img src="qr-code-mini-site.png" alt="QR Code">
         </div>
 
-        <a href="logo.png" class="btn" download="vcard-bufalitaly">
+        <button class="btn" onclick="telechargerVCard()">
             Enregistrer le contact
-        </a>
+        </button>
     </div>
+
+    <script>
+        function telechargerVCard() {
+            // METTEZ VOS INFOS ENTRE LES GUILLEMETS ICI :
+            const telephone = "+33612345678"; // <--- Votre numéro de tel
+            const email = "contact@bufalitaly.com"; // <--- Votre e-mail
+            const siteWeb = "https://ma-carte-contact.vercel.app/";
+
+            const vcardData = 
+                "BEGIN:VCARD\n" +
+                "VERSION:3.0\n" +
+                "FN:Bufalitaly\n" +
+                "ORG:Bufalitaly\n" +
+                "TEL;TYPE=CELL,VOICE:" + telephone + "\n" +
+                "EMAIL;TYPE=PREF,INTERNET:" + email + "\n" +
+                "URL:" + siteWeb + "\n" +
+                "END:VCARD";
+
+            const blob = new Blob([vcardData], { type: "text/vcard;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "Bufalitaly.vcf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+    </script>
 
 </body>
 </html>
