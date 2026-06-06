@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bufalitaly - Contact</title>
+    <title>Isabelle MUSSY - Carte Contact</title>
     <style>
-        /* --- 1. FOND NOIR PREMIUM --- */
+        /* --- FOND NOIR --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #0b0b0c; 
@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* --- 2. GUIRLANDE UNIQUEMENT VERT / BLANC / ROUGE --- */
+        /* --- GUIRLANDE SUBTILE VERT / BLANC / ROUGE --- */
         .guirlande {
             position: absolute;
             top: 0;
@@ -29,9 +29,9 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle, rgba(0, 146, 70, 0.4) 1.5px, transparent 1.5px),  /* Vert */
-                radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px),/* Blanc */
-                radial-gradient(circle, rgba(206, 43, 55, 0.4) 1.5px, transparent 1.5px); /* Rouge */
+                radial-gradient(circle, rgba(0, 146, 70, 0.4) 1.5px, transparent 1.5px),  
+                radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px),
+                radial-gradient(circle, rgba(206, 43, 55, 0.4) 1.5px, transparent 1.5px); 
             background-size: 40px 40px, 60px 60px, 50px 50px;
             background-position: 0 0, 20px 20px, 10px 30px;
             opacity: 0.25;
@@ -39,7 +39,6 @@
             pointer-events: none;
         }
 
-        /* --- BOÎTE DE LA CARTE --- */
         .card {
             background: #16161a; 
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -53,40 +52,88 @@
             z-index: 2;
         }
         
-        /* --- 3. ALIGNEMENT DES DEUX LOGOS --- */
+        /* --- ALIGNEMENT DES DEUX MARQUES --- */
         .logo-container {
             display: flex;
             justify-content: center;
             gap: 25px;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .logo-container img {
-            width: 90px;
-            height: 90px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
         }
 
+        /* --- IDENTITÉ & TEXTES --- */
         h1 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
-            margin: 10px 0 5px 0;
+            margin: 0 0 5px 0;
             letter-spacing: -0.5px;
         }
 
-        p {
+        .subtitle {
             font-size: 15px;
-            color: #8e8e93;
-            margin: 0 0 25px 0;
+            color: #bdc3c7;
+            margin: 0 0 5px 0;
+            font-weight: 500;
         }
 
-        /* --- BLOC BLANC DU QR CODE (Indispensable pour le scan) --- */
+        .description {
+            font-size: 14px;
+            color: #8e8e93;
+            margin: 0 0 20px 0;
+            font-style: italic;
+        }
+
+        /* --- FINE GUIRLANDE DE SÉPARATION --- */
+        .separator-line {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto 25px auto;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .dot-v { background-color: #009246; }
+        .dot-w { background-color: #ffffff; }
+        .dot-r { background-color: #ce2b37; }
+
+        /* --- BOUTONS D'APPEL DIRECT --- */
+        .action-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 12px;
+            transition: background 0.2s;
+        }
+
+        .action-link:active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* --- BLOC BLANC DU QR CODE --- */
         .qr-container {
             background-color: #ffffff; 
             border-radius: 18px;
             padding: 15px;
-            margin-bottom: 30px;
+            margin: 25px 0;
             display: inline-block;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
@@ -98,8 +145,8 @@
             margin: 0 auto;
         }
 
-        /* --- BOUTON D'ENREGISTREMENT --- */
-        .btn {
+        /* --- BOUTON ENREGISTREMENT --- */
+        .btn-submit {
             display: block;
             background-color: #ffffff; 
             color: #000000;
@@ -114,7 +161,7 @@
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
 
-        .btn:active {
+        .btn-submit:active {
             background-color: #e5e5ea;
         }
     </style>
@@ -125,44 +172,55 @@
 
     <div class="card">
         <div class="logo-container">
-            <img src="bufalitaly-tondo-sito.png" alt="Logo Rond">
-            <img src="logo.png" alt="Logo Signature">
+            <img src="bufalitaly-tondo-sito.png" alt="Logo Bufalitaly">
+            <img src="logo.png" alt="Logo Quattro Portoni">
         </div>
 
-        <h1>Bufalitaly</h1>
-        <p>Scannez ou enregistrez ma carte contact</p>
+        <h1>Isabelle MUSSY</h1>
+        <div class="subtitle">Agent commercial</div>
+        <div class="description">Import de fromages italiens d'exception</div>
+
+        <div class="separator-line">
+            <div class="dot dot-v"></div>
+            <div class="dot dot-w"></div>
+            <div class="dot dot-r"></div>
+        </div>
+
+        <a href="tel:+33663766048" class="action-link">
+            📞 06 63 76 60 48
+        </a>
+
+        <a href="mailto:isamussy@gmail.com" class="action-link">
+            ✉️ isamussy@gmail.com
+        </a>
 
         <div class="qr-container">
             <img src="qr-code-mini-site.png" alt="QR Code">
         </div>
 
-        <button class="btn" onclick="telechargerVCard()">
+        <button class="btn-submit" onclick="telechargerVCard()">
             Enregistrer le contact
         </button>
     </div>
 
     <script>
         function telechargerVCard() {
-            // METTEZ VOS INFOS ENTRE LES GUILLEMETS ICI :
-            const telephone = "+33612345678"; // <--- Votre numéro de tel
-            const email = "contact@bufalitaly.com"; // <--- Votre e-mail
-            const siteWeb = "https://ma-carte-contact.vercel.app/";
-
             const vcardData = 
                 "BEGIN:VCARD\n" +
                 "VERSION:3.0\n" +
-                "FN:Bufalitaly\n" +
-                "ORG:Bufalitaly\n" +
-                "TEL;TYPE=CELL,VOICE:" + telephone + "\n" +
-                "EMAIL;TYPE=PREF,INTERNET:" + email + "\n" +
-                "URL:" + siteWeb + "\n" +
+                "FN:Isabelle MUSSY\n" +
+                "ORG:Bufalitaly / Quattro Portoni\n" +
+                "TITLE:Agent commercial - Import de fromages italiens d'exception\n" +
+                "TEL;TYPE=CELL,VOICE:+33663766048\n" +
+                "EMAIL;TYPE=PREF,INTERNET:isamussy@gmail.com\n" +
+                "URL:https://ma-carte-contact.vercel.app/\n" +
                 "END:VCARD";
 
             const blob = new Blob([vcardData], { type: "text/vcard;charset=utf-8" });
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.href = url;
-            link.download = "Bufalitaly.vcf";
+            link.download = "Isabelle_MUSSY.vcf";
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
