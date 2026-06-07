@@ -137,11 +137,20 @@ transition: background 0.2s;
 background: #323238;
 }
 
+/* --- TEXTE DE PARTAGE AU-DESSUS DU QR CODE --- */
+.share-text {
+font-size: 13.5px;
+color: #8e8e93;
+margin-top: 25px;
+margin-bottom: 10px;
+font-weight: 500;
+}
+
 /* --- BLOC DU QR CODE --- */
 .qr-container {
 background-color: transparent; 
 padding: 0;
-margin: 25px 0 0 0;
+margin: 0 auto;
 display: inline-block;
 }
 
@@ -205,6 +214,8 @@ background-color: #e5e5ea;
 <button class="btn-submit" onclick="telechargerVCard()">
 Enregistrer le contact
 </button>
+
+<div class="share-text">Partagez mon univers : faites scanner ce QR code</div>
 
 <div class="qr-container">
 <img src="qr-code-mini-site.png" alt="QR Code Bufalitaly">
